@@ -1,6 +1,6 @@
 {
   "name": "@sfwnisme/visi",
-  "version": "0.0.1",
+  "version": "0.0.12",
   "description": "solidjs conditional rendering components for reactjs",
   "main": "dist/index.ts",
   "files": [
