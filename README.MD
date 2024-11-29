@@ -8,7 +8,7 @@
 
 This package aims to provide an efficient, easy-to-use, and flexible solution for handling conditional rendering in React applications, inspired by SolidJS's reactivity model.
 
-## ✨ Features
+## Features
 
 - **🚀 Declarative Syntax**: Write conditions in a clean, readable, and declarative manner.
 - **⚡ Efficient Conditional Rendering**: Improve your app's performance with optimized rendering approaches.
@@ -49,27 +49,27 @@ return <Dashboard />
 
 ```tsx
 // Single condition
-<Show when={isAuthorized} fallback={<Login />}>
+<Visible when={isAuthorized} fallback={<Login />}>
   <Dashboard />
-</Show>
+</Visible>
 
 // Nested condition
-<Show when={isAuthorized} fallback={<Login />}>
+<Visible when={isAuthorized} fallback={<Login />}>
   <Dashboard />
-  <Show when={isLogin}>
+  <Visible when={isLogin}>
     <LogoutButton />
-  </Show>
-</Show>
+  </Visible>
+</Visible>
 
 // Callback condition
-<Show when={user} fallback={<p>loading...</p>}>
+<Visible when={user} fallback={<p>loading...</p>}>
   {((userInfo: {name: string, age: string}) => (
     <p>{userInfo.name} is {userInfo.age} years old</p>
   ))}
-</Show>
+</Visible>
 ```
 
-### Switch Render Comparison
+### Shift Render Comparison
 
 #### Traditional React
 
@@ -99,17 +99,17 @@ return <Login />
 #### Visi
 
 ```tsx
-<Switch fallback={<Login />}>
-  <Match when={role === 'admin'}>
+<Shift fallback={<Login />}>
+  <Case when={role === 'admin'}>
     <AdminDashboard />
-  </Match>
-  <Match when={role === 'supervisor'}>
+  </Case>
+  <Case when={role === 'supervisor'}>
     <SupervisorDashboard />
-  </Match>
-  <Match when={role === 'user'}>
+  </Case>
+  <Case when={role === 'user'}>
     <UserDashboard />
-  </Match>
-</Switch>
+  </Case>
+</Shift>
 ```
 
 ## 📄 License

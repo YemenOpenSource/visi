@@ -1,16 +1,18 @@
 import React, { isValidElement } from 'react'
-import Match from './Match'
+import Case from './Case'
 
-type SwitchProps = {
+type ShiftProps = {
   fallback?: React.ReactNode,
   children: React.ReactNode,
 }
 
-export default function Switch({ fallback = null, children }: SwitchProps) {
+
+export default function Shift({ fallback = null, children }: ShiftProps) {
+  // strongly convert to array
   const childrenArray: React.ReactNode[] = React.Children.toArray(children)
 
   for (const element of childrenArray) {
-    if (isValidElement(element) && element.props.when && element.type === Match) {
+    if (isValidElement(element) && element.props.when && element.type === Case) {
       return element
     }
   }
