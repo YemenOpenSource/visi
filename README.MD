@@ -97,6 +97,7 @@ return <Login />
 ```
 
 #### Visi
+
 ```tsx
 <Switch fallback={<Login />}>
   <Match when={role === 'admin'}>
@@ -112,8 +113,6 @@ return <Login />
 ```
 
 ## 📄 License
-
-[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
