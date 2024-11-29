@@ -1,3 +1,3 @@
-export { default as Show } from './components/Show'
-export { default as Switch } from './components/Switch'
-export { default as Match } from './components/Match'
+export { default as Visible } from './components/Visible'
+export { default as Shift } from './components/Shift'
+export { default as Case } from './components/Case'
