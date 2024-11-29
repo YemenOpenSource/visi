@@ -1,9 +1,9 @@
-export type MatchProps<T> = {
+export type CaseProps<T> = {
   when: T | undefined | null | boolean,
   children: React.ReactNode | ((item: T) => React.ReactNode),
 }
 
-export default function Match<T>({ when, children }: MatchProps<T>): React.ReactNode {
+export default function Case<T>({ when, children }: CaseProps<T>): React.ReactNode {
   if (!when) {
     return null
   }
