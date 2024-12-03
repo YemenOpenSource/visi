@@ -86,9 +86,8 @@ role === 'admin'
   ? <AdminDashboard />
   : role === 'supervisor'
     ? <SupervisorDashboard />
-    : role === 'user'
-      ? <UserDashboard />
-      : <Login />;
+    : <UserDashboard />
+  : <Login />;
 
 // If-else approach
 if(role === 'admin') {
