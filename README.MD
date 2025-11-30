@@ -8,18 +8,11 @@
 
 This package aims to provide an efficient, easy-to-use, and flexible solution for handling conditional rendering in React applications, inspired by SolidJS's reactivity model.
 
-## ✨ Features
+## Features
 
-- **Standardized Components:** Use only three components (Visible, Shift, Case) for all conditional rendering scenarios, simplifying code review and debugging.
-- **Declarative Syntax:** Provides a clean and readable approach for handling conditions, avoiding complex inline logic.
-- **Reusable Components:** Unify conditional rendering logic into reusable components for consistency across the application.
-- **Callback Support:** Leverages the Function-as-Children Pattern to pass `when` prop value as the callback parameter, enhancing flexibility.
-- **Simplified Nested Conditions:** Handles excessive nested conditions with clear and maintainable component structures.
-- **Improved Readability:** Reduces clutter in deeply nested logic, making the code easier to understand.
-- **Enhanced Bug Tracking:** Streamlines debugging by centralizing conditional logic into predictable patterns.
-- **Switch Rendering Support:** Provides a robust alternative to switch or multiple if-else blocks using Shift and Case components.
-- **Consistent Codebase:** Eliminates the need for varied snippets, promoting a uniform coding style.
-- **React and SolidJS Inspiration**: Built to replicate SolidJS's efficient rendering while being tailored to React's ecosystem.
+- **🚀 Declarative Syntax**: Write conditions in a clean, readable, and declarative manner.
+- **⚡ Efficient Conditional Rendering**: Improve your app's performance with optimized rendering approaches.
+- **🔀 React and SolidJS Inspiration**: Built to replicate SolidJS's efficient rendering while being tailored to React's ecosystem.
 
 ## 📦 Installation
 
@@ -39,7 +32,7 @@ yarn add @sfwnisme/visi
 
 ### Single Render Comparison
 
-#### 🟥 Traditional React
+#### Traditional React
 
 ```tsx
 // Approach 1
@@ -52,7 +45,7 @@ if(!isAuthorized) {
 return <Dashboard />
 ```
 
-#### 🟩 Visi
+#### Visi
 
 ```tsx
 // Single condition
@@ -78,7 +71,7 @@ return <Dashboard />
 
 ### Shift Render Comparison
 
-#### 🟥 Traditional React
+#### Traditional React
 
 ```tsx
 // Ternary approach
@@ -86,8 +79,9 @@ role === 'admin'
   ? <AdminDashboard />
   : role === 'supervisor'
     ? <SupervisorDashboard />
-    : <UserDashboard />
-  : <Login />;
+    : role === 'user'
+      ? <UserDashboard />
+      : <Login />;
 
 // If-else approach
 if(role === 'admin') {
@@ -102,7 +96,7 @@ if(role === 'user') {
 return <Login />
 ```
 
-#### 🟩 Visi
+#### Visi
 
 ```tsx
 <Shift fallback={<Login />}>
@@ -118,97 +112,9 @@ return <Login />
 </Shift>
 ```
 
-### Excessive Complexity Render Comparison
-
-#### 🟥 Traditional React
-
-```tsx
-<div>
-  {user.role === 'admin' &&
-    user.permissions.posts.view &&
-    <Post>
-      <h3>post conetent....</h3>
-      {user.permissions.posts.comments.view &&
-        <Comment>
-          <div className="comment-box">
-            <p>comment content...</p>
-            {
-              user.permissions.posts.comments.delete &&
-              <Button>Delete</Button>
-            }
-            {
-              user.permissions.posts.comments.update &&
-              <Button>Update</Button>
-            }
-          </div>
-          {user.permissions.posts.comments.reply.view &&
-            <Replies>
-              <Reply>
-                <p>replay one content...</p>
-                {
-                  user.permissions.posts.comments.reply.delete &&
-                  <Button>Delete</Button>
-                }
-                {
-                  user.permissions.posts.comments.reply.update &&
-                  <Button>Update</Button>
-                }
-              </Reply>
-              {
-                user.permissions.posts.comments.reply.create &&
-                <CreateReply />
-              }
-            </Replies>
-          }
-        </Comment>
-      }
-    </Post>
-  }
-</div>
-```
-
-#### 🟩 Visi
-
-```tsx
-<Visible when={user.role === 'admin'}>
-  <Visible when={user.permissions.posts.view}>
-    <Post>
-      <h3>post conetent....</h3>
-      <Visible when={user.permissions.posts.comments.view}>
-        <Comment>
-          <div className="comment-box">
-            <p>comment content...</p>
-            <Visible when={user.permissions.posts.comments.delete}>
-              <Button>Delete</Button>
-            </Visible>
-            <Visible when={user.permissions.posts.comments.update}>
-              <Button>Update</Button>
-            </Visible>
-          </div>
-          <Visible when={user.permissions.posts.comments.reply.view}>
-            <Replies>
-              <Reply>
-                <p>replay one content...</p>
-                <Visible when={user.permissions.posts.comments.reply.delete}>
-                  <Button>Delete</Button>
-                </Visible>
-                <Visible when={user.permissions.posts.comments.reply.update}>
-                  <Button>Update</Button>
-                </Visible>
-              </Reply>
-              <Visible when={user.permissions.posts.comments.reply.create}>
-                <CreateReply />
-              </Visible>
-            </Replies>
-          </Visible>
-        </Comment>
-      </Visible>
-    </Post>
-  </Visible>
-</Visible >
-```
-
 ## 📄 License
+
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
