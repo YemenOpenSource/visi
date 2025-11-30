@@ -1,8 +1,27 @@
 {
   "name": "@sfwnisme/visi",
-  "version": "0.0.12",
+  "version": "1.0.0",
   "description": "solidjs conditional rendering components for reactjs",
-  "main": "dist/index.ts",
+  "keywords": [
+    "react",
+    "nextjs",
+    "solidjs",
+    "conditional rendering",
+    "components",
+    "visible",
+    "shift",
+    "case",
+    "react-components",
+    "react-library",
+    "solidjs-inspired",
+    "declarative",
+    "react-utils",
+    "react-conditional"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "README.md",
@@ -11,9 +30,11 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
       "default": "./dist/index.js"
     }
   },
+  "sideEffects": false,
   "scripts": {
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
@@ -21,14 +42,22 @@
   },
   "author": "sfwnisme",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfwnisme/visi.git"
+  },
+  "homepage": "https://github.com/sfwnisme/visi#readme",
+  "bugs": {
+    "url": "https://github.com/sfwnisme/visi/issues"
+  },
   "devDependencies": {
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "typescript": "^5.7.2"
   },
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": ">=16.8.0 <20.0.0",
+    "react-dom": ">=16.8.0 <20.0.0"
   },
   "dependencies": {
     "rimraf": "^6.0.1"
