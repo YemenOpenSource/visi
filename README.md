@@ -1,8 +1,9 @@
 # @sfwnisme/visi
 
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm version](https://badge.fury.io/js/%40sfwnisme%2Fvisi.svg)](https://badge.fury.io/js/%40sfwnisme%2Fvisi)
+[![npm version](https://img.shields.io/badge/npm-v1.0.0-blue)](https://www.npmjs.com/package/@sfwnisme/visi)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-Ready-black?logo=next.js)](https://nextjs.org/)
 
 `@sfwnisme/visi` is a React package that adapts SolidJS's powerful and efficient conditional rendering components. It offers a declarative API to conditionally render components based on given conditions, closely mimicking SolidJS's approach to reactive rendering in React.
 
@@ -20,6 +21,7 @@ This package aims to provide an efficient, easy-to-use, and flexible solution fo
 - **Switch Rendering Support:** Provides a robust alternative to switch or multiple if-else blocks using Shift and Case components.
 - **Consistent Codebase:** Eliminates the need for varied snippets, promoting a uniform coding style.
 - **React and SolidJS Inspiration**: Built to replicate SolidJS's efficient rendering while being tailored to React's ecosystem.
+- **Next.js Ready:** Fully compatible with Next.js projects.
 
 ## 📦 Installation
 
